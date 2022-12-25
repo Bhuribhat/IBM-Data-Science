@@ -11,8 +11,8 @@ This repository contains documentation and resources used to complete the certif
 - What is Data Science?
 - Tools for Data Science
 - Data Science Methodology
-- :white_check_mark: 04. Python for Data Science, AI & Development
-- :white_check_mark: 05. Python Project for Data Science
+- :white_check_mark: Python for Data Science, AI & Development
+- :white_check_mark: Python Project for Data Science
 - Databases and SQL for Data Science with Python
 - Data Analysis with Python
 - Data Visualization with Python
@@ -49,5 +49,5 @@ The following Python libraries were used throughout the certification: <br>
 - [Extracting and Visualizing Stock Data](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/5.%20Python%20Project%20for%20Data%20Science/Final%20Assignment.ipynb)
 
 
-## 🏆 Certificates 
-To verify the certificates, click the images to follow the links.
+<!-- ## 🏆 Certificates 
+To verify the certificates, click the images to follow the links. -->
