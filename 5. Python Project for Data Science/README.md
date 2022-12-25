@@ -9,8 +9,8 @@ This course is intended to demonstrate foundational Python skills for working wi
 - [Analyzing Historical Stock/Revenue Data and Building a Dashboard](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/Project/Final%20Assignment.ipynb)
 
 <p align="middle">
-  <img src="./images/plot1.png" height="300">
-  <img src="./images/plot2.png" height="300">
+  <img src="./Images/plot1.png" height="300">
+  <img src="./Images/plot2.png" height="300">
 </p>
 
 ## 🔑 Key Skills Learned 
