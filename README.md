@@ -8,16 +8,17 @@ This repository contains documentation and resources used to complete the certif
 
 
 ## 📑 Courses
-- 01. What is Data Science?
-- 02. Tools for Data Science
-- 03. Data Science Methodology
+- What is Data Science?
+- Tools for Data Science
+- Data Science Methodology
 - :white_check_mark: 04. Python for Data Science, AI & Development
 - :white_check_mark: 05. Python Project for Data Science
-- 06. Databases and SQL for Data Science with Python
-- 07. Data Analysis with Python
-- 08. Data Visualization with Python
-- 09. Machine Learning with Python
-- 10. Applied Data Science Capstone
+- Databases and SQL for Data Science with Python
+- Data Analysis with Python
+- Data Visualization with Python
+- Machine Learning with Python
+- Applied Data Science Capstone
+
 
 ## 🛠️ Tools
 The following tools were used to complete this certification: <br> <br>
@@ -28,6 +29,7 @@ The following tools were used to complete this certification: <br> <br>
   <img src="https://user-images.githubusercontent.com/84391594/152705298-bb170d32-3dd0-4ad4-8221-8b7b029116b4.png" height="75">
 </p>
 (Python, Jupyter, GitHub, IBM Watson Studio, IBM Cloud Pak)
+
 
 ## 📖 Libraries
 The following Python libraries were used throughout the certification: <br> 
@@ -42,9 +44,9 @@ The following Python libraries were used throughout the certification: <br>
   <img  src="https://user-images.githubusercontent.com/84391594/152706217-c0cfd9d8-22ad-4c3b-9ac7-70a6cf2799f7.png" height="35"> <br>
 </p>
 
-## 📂 Projects
-- [Extracting and Visualizing Stock Data](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/Project/Final%20Assignment.ipynb)
 
+## 📂 Projects
+- [Extracting and Visualizing Stock Data](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/5.%20Python%20Project%20for%20Data%20Science/Final%20Assignment.ipynb)
 
 
 ## 🏆 Certificates 

@@ -57,4 +57,4 @@ Upon its completion, you'll be able to write your own Python scripts and perform
 To verify the certificates, click the images to follow the links.
 
 <p align="middle">
-  <a href="https://coursera.org/share/4bbe07682eedf13ca3af54170ed96557"><img src="./Images/Certificate1.png" height="400"></a>
+  <a href="https://coursera.org/share/4bbe07682eedf13ca3af54170ed96557"><img src="./Images/Certificate.png" height="400"></a>
