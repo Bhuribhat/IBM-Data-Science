@@ -8,6 +8,11 @@ This course is intended to demonstrate foundational Python skills for working wi
 - [Extracting Stock Data Using Web Scraping](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/Project/2_Extracing_Stock_Data_Webscraping.ipynb)
 - [Analyzing Historical Stock/Revenue Data and Building a Dashboard](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/Project/Final%20Assignment.ipynb)
 
+<p align="middle">
+  <img src="./images/plot1.png" height="300">
+  <img src="./images/plot2.png" height="300">
+</p>
+
 ## 🔑 Key Skills Learned 
 - Data extraction using the yfinance library
 - Webscraping using the BeautifulSoup library
