@@ -13,12 +13,12 @@ The [final project]() within this course is the building of a classifier to pred
 
 <!-- TODO add hyperlink -->
 ## 📑 Main Topics
-- [Introduction to Machine Learning]()
+- [Introduction to Machine Learning](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%201%20-%20Intro%20to%20Machine%20Learning)
   - Examples of machine learning in various industries
   - The steps machine learning uses to solve problems
   - Examples of techniques and Python libraries used 
   - Differences between Supervised and Unsupervised algorithms
-- [Regression]()
+- [Regression](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%202%20-%20Regression)
   - Simple linear regression
   - Multiple linear regression
   - Non-linear regression

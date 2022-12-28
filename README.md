@@ -55,7 +55,7 @@ The following Python libraries were used throughout the certification: <br>
 To verify the certificates, click the images to follow the links. -->
 
 
-## Reference
+## 📚 Reference
 - [Thomas George T](https://github.com/Thomas-George-T/IBM-Data-Science-Professional-Certification)
 - [DanielBarnes18](https://github.com/DanielBarnes18/IBM-Data-Science-Professional-Certificate)
 - [luuquangtrung](https://github.com/luuquangtrung/ibm_data_science)
