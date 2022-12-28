@@ -7,6 +7,7 @@ The <a href="https://www.coursera.org/professional-certificates/ibm-data-science
 This repository contains documentation and resources used to complete the certification, relevant notes and other code snippets, and proof of certification for each course.
 
 
+<!-- TODO check ML -->
 ## 📑 Courses
 - What is Data Science?
 - Tools for Data Science
@@ -45,9 +46,16 @@ The following Python libraries were used throughout the certification: <br>
 </p>
 
 
+<!-- TODO add project  -->
 ## 📂 Projects
 - [Extracting and Visualizing Stock Data](https://github.com/Bhuribhat/IBM-Data-Science/blob/main/5.%20Python%20Project%20for%20Data%20Science/Final%20Assignment.ipynb)
 
 
 <!-- ## 🏆 Certificates 
 To verify the certificates, click the images to follow the links. -->
+
+
+## Reference
+- [Thomas George T](https://github.com/Thomas-George-T/IBM-Data-Science-Professional-Certification)
+- [DanielBarnes18](https://github.com/DanielBarnes18/IBM-Data-Science-Professional-Certificate)
+- [luuquangtrung](https://github.com/luuquangtrung/ibm_data_science)
