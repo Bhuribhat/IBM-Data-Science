@@ -7,11 +7,9 @@ To explore the methods of machine learning, and the algorithms involved, many ex
 
 ![sklearn](Images/sklearn.png)
 
-<!-- TODO add hyperlink -->
-The [final project]() within this course is the building of a classifier to predict whether a loan case will be paid off. It is a classification problem, and KNN, Decision Tree, SVM, and Logistic Regression are all used to determine the best algorithm to use.
+The [final project](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%205%20-%20Final%20Project) within this course is the building of a classifier to predict whether a loan case will be paid off. It is a classification problem, and KNN, Decision Tree, SVM, and Logistic Regression are all used to determine the best algorithm to use.
 
 
-<!-- TODO add hyperlink -->
 ## 📑 Main Topics
 - [Introduction to Machine Learning](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%201%20-%20Intro%20to%20Machine%20Learning)
   - Examples of machine learning in various industries
@@ -23,20 +21,16 @@ The [final project]() within this course is the building of a classifier to pred
   - Multiple linear regression
   - Non-linear regression
   - Evaluating regression models
-- [Classification]()
+- [Classification](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%203%20-%20Classification)
   - Comparisons between the different classification methods
   - K Nearest Neighbours (KNN) algorithm
   - Decision Trees
   - Logistic Regression
   - Support Vector Machines
-- [Clustering]()
+- [Clustering](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%204%20-%20Clustering)
   - k-Means Clustering
   - Hierarchical Clustering
   - Density Based Clustering
-- [Recommender Systems]()
-  - Memory-based and model-based implementations of recommender systems
-  - Content-based recommender systtems
-  - Collaborative filtering systems
 
 
 ## 🔑 Key Skills Learned 
