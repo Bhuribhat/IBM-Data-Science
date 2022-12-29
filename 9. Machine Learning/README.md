@@ -23,10 +23,12 @@ The [final project](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%2
   - Evaluating regression models
 - [Classification](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%203%20-%20Classification)
   - Comparisons between the different classification methods
-  - K Nearest Neighbours (KNN) algorithm
+  - K Nearest Neighbours (KNN)
   - Decision Trees
+  - Regression Trees
   - Logistic Regression
-  - Support Vector Machines
+  - Support Vector Machines (SVM)
+  - Multiclass Prediction
 - [Clustering](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%204%20-%20Clustering)
   - k-Means Clustering
   - Hierarchical Clustering

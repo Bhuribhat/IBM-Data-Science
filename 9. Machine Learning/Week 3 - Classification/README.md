@@ -20,7 +20,7 @@ Classification can also be used to predict the category to which a customer belo
 ## Module Scope
 This module will consider some of the many types of classification algorithms, such as decision trees, k-nearest neighbor, logistic regression, and support vector machines. There are many types of classification algorithms. 
 
-### K-Nearest Neighbours Algorithm
+### K-Nearest Neighbours
 1. Pick a value for K.
 2. Calculate the distance of unknown case from all cases.
 3. Select the K-observations in the training data that are "nearest" to the unknow data point.
@@ -47,6 +47,41 @@ As we have already seen, decision trees can be used for classification, but we c
 The basic idea behind regression trees is to split our data into groups based on features, like in classification, and return a prediction that is the average across the data we have already seen.  
 
 The way the trees are built are similar to classification, but instead of using the **entropy** criterion. In Classification Trees, we choose features that increase the **information gain**. In Regression Trees, we choose features that minimize the error.  
+
+### Logistic Regression
+
+we can simply say, gradient descent is like taking steps in the current direction of the slope, and the learning rate is like the length of the step you take. So, these would be our new parameters.
+
+- use `gradient descent` to minimize the cost function
+- `Learning rate`, gives us additional control on how fast we move on the surface
+
+![logistric](../Images/logistic_regression.png)
+![gradient_descent](../Images/gradient_descent.png)
+
+### Algorithm
+1. Initialize the paarameters randomly.
+2. Feed the cost function with training set, and calculate the error.
+3. Calculate the gradient of the cost function
+4. Update weights with the new values.
+5. Go to step 2 until the cost is small enough.
+6. Predict the new X.
+
+### Support Vector Machine
+
+A Support Vector Machine is a supervised algorithm that can classify cases by finding a separator.  
+The goal is to choose a hyperplane with as big a margin as possible. The closest to the hyperplane are support vectors.
+
+1. Mapping data to a **high-dimensional** feature space.
+2. Find a **seperator**
+
+#### Advantages:
+- Accurate in high-dimensional spaces
+- Memory efficient
+
+#### Disadvantages:
+- Prone to over-fitting
+- No probability estimation
+- Small datasets
 
 
 ## Evaluation Metrics in Classification
