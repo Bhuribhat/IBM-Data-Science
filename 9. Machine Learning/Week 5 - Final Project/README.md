@@ -22,3 +22,5 @@ The results are reported as the accuracy of each classifier, using the following
 5. Mean Absolute Error
 6. Mean Squared Error
 7. R2-Score
+
+![project_decision_tree.png](../Images/project_decision_tree.png)
