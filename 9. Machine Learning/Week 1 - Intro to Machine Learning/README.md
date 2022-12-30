@@ -28,7 +28,7 @@ So in summary, AI is the broadest term, ML is a subset of AI, and DL is a subset
 ## Supervised vs Unsupervised Learning
 
 ### Definition
-Supervised learning deals with un-labelled data, while unsupervised learning deals with labelled data.
+Supervised learning deals with `labeled data`, while unsupervised learning deals with `unlabeled data`.
 
 
 ### Supervised Learning
@@ -37,12 +37,12 @@ There are two types of supervised learning techniques:
 - Regression - the process of predicting a continuous value
 
 To supervise a machine learning model, we load the model with knowledge so that we can have it predict future instances. To do this, we split the data into 2 parts:
-- Labelled training data, where we know the outcome/result
-- Testing data, which is not labelled, and we do not know the outcome/result
+- Labeled training data, where we know the outcome/result
+- Testing data, which is not labeled, and we do not know the outcome/result
 We teach the model by training it with the training data.
 
 ### Unsupervised Learning
-Unsupervised learning involves data without labels, and we let the model work on its own to discover information that may not be visible to the human eye. It means, the unsupervised algorithm trains on the dataset, and draws conclusions on un-labelled data. Generally speaking, unsupervised learning has more difficult algorithms than supervised learning, since we know little to no information about the data, or the outcomes that are to be expected. 
+Unsupervised learning involves data without labels, and we let the model work on its own to discover information that may not be visible to the human eye. It means, the unsupervised algorithm trains on the dataset, and draws conclusions on unlabeled data. Generally speaking, unsupervised learning has more difficult algorithms than supervised learning, since we know little to no information about the data, or the outcomes that are to be expected. 
 The most widely used unsupervised learning techniques are:
 - Dimension Reduction / Feature Selection - this reduces redundant features to make later classification easier
 - Density Estimation - a simple concept that is mostly used to explore the data to find some structure within it

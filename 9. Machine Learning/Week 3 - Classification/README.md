@@ -68,11 +68,13 @@ we can simply say, gradient descent is like taking steps in the current directio
 
 ### Support Vector Machine
 
-A Support Vector Machine is a supervised algorithm that can classify cases by finding a separator.  
-The goal is to choose a hyperplane with as big a margin as possible. The closest to the hyperplane are support vectors.
+![non-linear](../Images/svm1.png)
 
-1. Mapping data to a **high-dimensional** feature space.
-2. Find a **seperator**
+A Support Vector Machine is a supervised algorithm that can classify cases by finding a separator.  
+The goal is to choose a hyperplane with as big a margin as possible (maximum distance to support vectors). The examples closest to the hyperplane are support vectors.
+
+![hyper_plane](../Images/svm3.png)
+![high_dimensional](../Images/svm2.png)
 
 #### Advantages:
 - Accurate in high-dimensional spaces
