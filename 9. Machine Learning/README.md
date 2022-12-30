@@ -41,11 +41,10 @@ The [final project](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%2
 - Application of Regression, Classification, Clustering, and Recommender Systems algorithms on various datasets to solve real world problems
 
 
-<!-- TODO add hyperlink -->
 ## 🏆 Certificates 
 To verify the certificates, click the images to follow the links.
 
 <p align="middle">
-  <a href=""><img src="" height="430"></a>
-  <!-- <a href="https://www.credly.com/badges/b54bde88-0909-4564-8028-b78bae7170bb/public_url"><img src="https://user-images.githubusercontent.com/84391594/152701694-4a2b4ac7-9a8a-4dd3-bce9-fcf8143cd009.png" height="430"></a> -->
+  <a href="https://coursera.org/share/6de86d8763094869991ce4da25cc6b0f">
+  <img src="./Images/Certificate.png" height="430"></a>
 </p>
