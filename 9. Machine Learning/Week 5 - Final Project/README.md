@@ -6,7 +6,7 @@ This project involved completing a notebook to build a classifier that predicts 
 ## 📝Method
 For your project, you will use a rainfall dataset from Australian Government's Bureau of Meteorology , clean the data, and apply different classification algorithm on the data.  
 
-Tthe following classification algorithms are trained using the training data, and the corresponding scikit learn libraries:
+The following classification algorithms are trained using the training data, and the corresponding scikit learn libraries:
 
 1. Linear Regression
 2. KNN
