@@ -27,6 +27,9 @@ This module will consider some of the many types of classification algorithms, s
 4. Predict the response of the unknown data point using the most popular response value from KNN.
 
 ### Decision Tree
+- Entropy is a measure of disorder or impurity in the given dataset.
+- Information Gain measures the expected reduction in entropy.
+- The feature which has minimum impurity will be considered as the root node.
 
 #### Train Dataset
 - Each `internal node` corresponds to a test
