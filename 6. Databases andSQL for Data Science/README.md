@@ -1,4 +1,4 @@
-# COURSE 5: DATABASES AND SQL FOR DATA SCIENCE
+# COURSE 6: DATABASES AND SQL FOR DATA SCIENCE
 
 **NOTE**: Besides IBM Db2 we can also use [w3school.com](https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_in) to test SQL queries 
 
