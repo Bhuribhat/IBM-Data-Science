@@ -93,8 +93,8 @@ drop table COUNTRY;
 
 create table COUNTRY (
     ID integer PRIMARY KEY NOT NULL,	-- It cannot contain a NULL or empty value
-    CCODE char(2),						-- Country code of type char (2 letters)
-    NAME varchar(60)					-- A variable length country name column
+    CCODE char(2),			-- Country code of type char (2 letters)
+    NAME varchar(60)			-- A variable length country name column
     );
 ```
 
@@ -194,7 +194,7 @@ B3		| Harry Potter
 insert into [tablename] <([columnname1],...)> values ([value1],...)
 -- Example:
 insert into book_table 
-	(book_id, title)				-- Column names
+	(book_id, title)		-- Column names
 	values
 	('B4', 'The Lord of the Rings') -- Nb of values must match the nb of column name
 ```
@@ -298,8 +298,8 @@ db2 => select firstname, lastname, country from author where
 * We can use the keyword `DESC` to sort the data in descending order and the keyword `ASC` to sort in ascending order.
 
 ```sql 
-db2 => select title from book_table order by title 	  --by default: ascending order (ABC)
-db2 => select title, pages from book_table order by 2 --id of the column to be sorted
+db2 => select title from book_table order by title 	-- by default: ascending order (ABC)
+db2 => select title, pages from book_table order by 2 	-- id of the column to be sorted
 ```
 
 
@@ -341,9 +341,9 @@ db2 => select country, count(country) from author
 /* 
 	COUNTRY  	2
 	-------- 	--------
-	AU 			1
-	BR 			5
-	CN 			6
+	AU 		1
+	BR 		5
+	CN 		6
 */
 
 -- count nb of authors for each country and name the column
@@ -353,9 +353,9 @@ db2 => select country, count(country) as count from author
 /* 
 	COUNTRY  	COUNT
 	-------- 	--------
-	AU 			1
-	BR 			5
-	CN 			6
+	AU 		1
+	BR 		5
+	CN 		6
 */
 
 -- furthermore: restrict the country having more than 4 authors
@@ -365,8 +365,8 @@ db2 => select country, count(country) as count from author
 /* 
 	COUNTRY  	COUNT
 	-------- 	--------
-	BR 			5
-	CN 			6
+	BR 		5
+	CN 		6
 */
 ```
 
@@ -475,7 +475,7 @@ select (CURRENT DATE - SALEDATE) from PETSALE
 * Consider the `EMPLOYEES` table from the previous lesson. Lets say we want to retrieve the list of employees who earn more than the average salary. To do so we could try:
 
 ```sql
-select * from employees where salary > avg(salary)
+select * from employees where salary > avg(salary);
 ```
 
 However running this query will result in an error like:
@@ -506,7 +506,7 @@ The `IN` operator can also be used and there can be multiple leves of sub-querie
 select EMP_ID, F_NAME, L_NAME, DEP_ID from employees 
 where DEP_ID IN  
 	(select DEP_ID from employees where DEP_ID > 
-	(select MIN(DEP_ID) from employees ) 
+	(select MIN(DEP_ID) from employees) 
 );
 ```
 
@@ -516,7 +516,7 @@ The sub-select doesn't just have to go in the where clause, it can also go in ot
 select EMP_ID, SALARY,
 	(select AVG(SALARY) from employees) 
 	AS AVG_SALARY
-	from employees ;
+	from employees;
 ```
 
 Another option is to make the sub-query be part of the `FROM` clause:
@@ -549,7 +549,7 @@ E1004  | San  	| Kumar  | 123 | 1972-07-31 | M   | 1 av... | 500    | 65000  | 3
 
 ```sql
 SELECT F_NAME FROM EMPLOYEES 
-	WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES)
+	WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES);
 ```
 
 
@@ -564,7 +564,7 @@ DEPT_ID_DEP | DEP_NAME | MANAGER_ID | LOC_ID
 
 ```sql
 SELECT * FROM EMPLOYEES 
-	WHERE DEP_ID = (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS)
+	WHERE DEP_ID = (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS);
 ```
 
 
@@ -589,7 +589,7 @@ Now let's retrieve the department ID and name for Empolyees who earn more than 7
 ```sql
 select DEPT_ID_DEP, DEP_NAME from departments
 	where DEPT_ID_DEP IN
-		(select DEP_ID from employees where SALARY > 70000) ;
+		(select DEP_ID from employees where SALARY > 70000);
 ```
 
 2. Implicit join
@@ -627,7 +627,7 @@ Let's say we want to see the department name for each employee:
 ```sql
 select E.EMP_ID, D.DEP_NAME from 
 	employees E, departments D
-	where E.DEP_ID = D.DEPT_ID_DEP
+	where E.DEP_ID = D.DEPT_ID_DEP;
 ```
 
 However, if two tables have different column names, we don't need to use prefixes of tables. For example:
@@ -636,12 +636,12 @@ However, if two tables have different column names, we don't need to use prefixe
 -- Full command using table prefixes:
 SELECT E.F_NAME, D.DEP_NAME 
 	FROM EMPLOYEES E, DEPARTMENTS D 
-	WHERE E.DEP_ID = D.DEPT_ID_DEP
+	WHERE E.DEP_ID = D.DEPT_ID_DEP;
 
 -- Short command, given that two tables have different column names:
 SELECT F_NAME, DEP_NAME 
 	FROM EMPLOYEES, DEPARTMENTS 
-	WHERE DEPT_ID_DEP = DEP_ID
+	WHERE DEPT_ID_DEP = DEP_ID;
 ```
 
 3. JOIN OPERATOR
@@ -652,8 +652,6 @@ We can explicitly use the `JOIN` operator to `JOIN` multiple tables in a single 
 ### QUIZ: Functions, Sub-Queries, Multiple Tables
 
 ## WEEK 3: Accessing Databases using Python
-
-
 
 ### How to access DBs using Python?
 
@@ -772,10 +770,10 @@ Connecting to the DB2 warehouse requires the following information: a driver nam
 '''
 
 dsn_driver 	 = "IBM DB2 ODBC DRIVER"
-dsn_database = "BLUDB" 	# e.g., "BLUDB"
-dsn_hostname = "dashdb-entry-yp-dal10-01.services.dal.bluemix.net"
+dsn_database     = "BLUDB" 	# e.g., "BLUDB"
+dsn_hostname     = "dashdb-entry-yp-dal10-01.services.dal.bluemix.net"
 dsn_port 	 = "50001"
-dsn_protocol = "TCPIP"
+dsn_protocol     = "TCPIP"
 dsn_uid 	 = "dahs104434"
 dsn_pwd 	 = "ABCXYZ"
 
@@ -792,7 +790,7 @@ dsn = (
 	"PROTOCOL = TCPIP"
 	"UID = {3};"
 	"PWD = {4};"
-	).format(dsn_database, dsn_hostname, dsn_port, dsn_uid, dsn_pwd) 
+).format(dsn_database, dsn_hostname, dsn_port, dsn_uid, dsn_pwd) 
 
 try:
 	conn = ibm_db.connect(dsn, "", "")
@@ -839,7 +837,7 @@ stmt  = ibm_db.exec_immediate(conn,
 		model VARCHAR(20) NOT NULL,
 		manufacturer VARCHAR(20) NOT NULL,
 		Engine_size VARCHAR(20) NOT NULL,
-		Truck_Class VARCHAR(20) NOT NULL)")
+		Truck_Class VARCHAR(20) NOT NULL);")
 
 # Python code to insert data into the table
 stmt  = ibm_db.exec_immediate(conn,
@@ -924,7 +922,7 @@ import ibm_db_dbi
 pconn = ibm_db_dbi.Connection(conn)
 df = pd.read_sql('SELECT count(*) FROM MCDONALS_NUTRITION', pconn)
 
-df.head() 						# View 5 first rows
+df.head() 			# View 5 first rows
 df.describe(include = 'all') 	# View summary of the table: count, unique, top, freq, mean, std, etc.
 ```
 
@@ -965,7 +963,7 @@ max 	3600.000 <- HERE
 df['Sodium'].idxmax() 	# Output: 82
 
 # Find the item name associated with the row id = 82
-df.at[82, 'Item'] 		# Output: 'Chicken McNuggets (40 piece)'
+df.at[82, 'Item'] 	# Output: 'Chicken McNuggets (40 piece)'
 
 ```
 
@@ -980,7 +978,6 @@ import seaborn as sns
 
 plot = sns.jointplot(x="Protein", y="Total Fat", data=df)
 plot.show()
-
 ```
 
 **Comments:**
