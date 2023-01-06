@@ -18,7 +18,7 @@ Statement | Category
 * `DDL`: Data Definition Languague
 * `DML`: Data Manipulation Languague
 
-### Video 1: Basic SQL (5 commands) and Relational Databases
+### Basic SQL (5 commands) and Relational Databases
 
 * SQL: Structured (English) Query Languague
 	* A languague used for relational databases to query data
@@ -43,7 +43,7 @@ Statement | Category
 
 * Basic 5 SQL commands: `CREATE`, `INSERT`, `SELECT`, `UPDATE`, `DELETE`
 
-### Video 2: How to create a database instance?
+### How to create a database instance?
 
 * Cloud database:
 	* Advantages: Ease of use, Scalability, Disaster Recovery
@@ -60,13 +60,13 @@ Statement | Category
 		* Password
 		* Version: Compatible with DB2 for Linux, UNIX, Windows. v11.1 or later
 
-### Video 3: `CREATE` Table Statement
+### `CREATE` Table Statement
 Outline: 
-	* Distinguish between: 
-		1. Data Definition Languague (DDL) statements: Define, Change, or Drop data
-		-> *CREATE is DDL*
-		2. Data Manipulation Languague (DML) statements: Read, Modify data
-	* Explain how the Entity name and Attributes are used to create a relational DB table
+* Distinguish between: 
+	1. Data Definition Languague (DDL) statements: Define, Change, or Drop data
+	-> *CREATE is DDL*
+	2. Data Manipulation Languague (DML) statements: Read, Modify data
+* Explain how the Entity name and Attributes are used to create a relational DB table
 
 
 * Constraints in table:
@@ -81,7 +81,7 @@ create table TABLENAME (
     COLUMN2 datatype,
     COLUMN3, datatype,
         ...
-    ) ;
+    );
 ```
 
 ```sql
@@ -92,19 +92,20 @@ create table TABLENAME (
 drop table COUNTRY;						
 
 create table COUNTRY (
-    ID integer PRIMARY KEY NOT NULL, 	-- It cannot contain a NULL or empty value
+    ID integer PRIMARY KEY NOT NULL,	-- It cannot contain a NULL or empty value
     CCODE char(2),						-- Country code of type char (2 letters)
     NAME varchar(60)					-- A variable length country name column
     );
 ```
 
+### `SELECT` Statement
 
-### Video 4: `SELECT` Statement
-Outline:
-	* Retrieve data from a relational DB table
-	* Define the use of a predicate
-	* Identify syntax of `SELECT` using `WHERE` clause
-	* List the comparision operators supported by a RDRMS
+Outline:  
+
+- Retrieve data from a relational DB table
+- Define the use of a predicate
+- Identify syntax of `SELECT` using `WHERE` clause
+- List the comparision operators supported by a RDRMS
 
 1. Retrieve data from table:
 
@@ -125,8 +126,8 @@ db2 => select * from book_table
 ```
 
 `SELECT` statement:
-	* `SELECT` is a *DML* query used to read and modify data
-	* Output of SELECT is called the `Result Set` or a `Result Table`
+- `SELECT` is a *DML* query used to read and modify data
+- Output of SELECT is called the `Result Set` or a `Result Table`
 
 We can retrieve just a subset of columns:
 The order of the columns in the query will be the display order 
@@ -137,10 +138,10 @@ db2 => select book_id, title from book_table
 ```
 
 `WHERE` clause:
-	* Restricting the Result Set
-	* Always requires a Predicate: 
-		* Evaluates to: True, False, or Unknown,
-		* Used in the search condition of the WHERE clause
+- Restricting the Result Set
+- Always requires a Predicate: 
+	- Evaluates to: True, False, or Unknown,
+	- Used in the search condition of the WHERE clause
 
 ```sql
 db2 => select book_id, title from book_table where book_id = 'B1'
@@ -170,13 +171,14 @@ select * from MEDALS where YEAR = 2018 LIMIT 5
 ```
 
 
-### Video 5: `INSERT` Statement
+### `INSERT` Statement
+
 Outline:
-	* Syntax of `INSERT`
-	* Explain 2 methods to add rows to a table
+- Syntax of `INSERT`
+- Explain 2 methods to add rows to a table
 
 `INSERT` statement:
-	* `INSERT` is a *DML* query used to read and modify data
+- `INSERT` is a *DML* query used to read and modify data
 
 Table `book_table`:
 
@@ -206,13 +208,13 @@ insert into book_table
 	('B5', 'The Hobbit') 
 ```
 
-### Video 6: `UPDATE` and `DELETE` Statements
+### `UPDATE` and `DELETE` Statements
 Outline:
-	* Syntax of `UPDATE` and `DELETE`
-	* Importance of `WHERE` clause in both 2 statements
+* Syntax of `UPDATE` and `DELETE`
+* Importance of `WHERE` clause in both 2 statements
 
 Principles:
-	* `UPDATE` and `DELETE` are both *DML* query used to read and modify data
+* `UPDATE` and `DELETE` are both *DML* query used to read and modify data
 
 
 Table `book_table`:
@@ -245,14 +247,14 @@ delete from book_table
 ```
 
 *NOTE*: Be careful, if `WHERE` clause is not specified
-	* With `UPDATE`: ALL the rows will be updated!
-	* With `DELETE`: ALL the rows will be removed!
+* With `UPDATE`: ALL the rows will be updated!
+* With `DELETE`: ALL the rows will be removed!
 
 
 
 ## WEEK 2: Advanced SQL
 
-### Video 1: Using String Patterns, Ranges
+### Using String Patterns, Ranges
 
 Table `book_table`:
 
@@ -273,19 +275,21 @@ db2 => select firstname from author where firstname like 'R%'
 
 -- EXAMPLE 2:
 db2 => select title, pages from book_table where pages >= 290 AND pages <= 300
+
 -- Instead of the above, we can rather use the following: More easier and quicker
 db2 => select title, pages from book_table where pages between 290 and 300
 
 -- EXAMPLE 3:
 db2 => select firstname, lastname, country from author where 
 		country='AU' OR country='BR'
+
 -- Use this instead:
 db2 => select firstname, lastname, country from author where 
 		country IN ('AU','BR')
 ```
 
 
-### Video 2: Sorting Result Sets
+### Sorting Result Sets
 * How to sort result sets by either ascending or descending order
 * How to indicate which column to use for the sorting order
 
@@ -299,7 +303,7 @@ db2 => select title, pages from book_table order by 2 --id of the column to be s
 ```
 
 
-### Video 3: Grouping Result Sets
+### Grouping Result Sets
 * How to eliminate duplicates from a result set
 * How to restrict a result set: Using `DISTINCT`, `GROUP BY`, and `HAVING` clause
 
@@ -500,27 +504,26 @@ The `IN` operator can also be used and there can be multiple leves of sub-querie
 
 ```sql
 select EMP_ID, F_NAME, L_NAME, DEP_ID from employees 
- where DEP_ID IN  
- ( select DEP_ID from employees where DEP_ID > 
-         ( select MIN(DEP_ID) from employees ) 
- );
+where DEP_ID IN  
+	(select DEP_ID from employees where DEP_ID > 
+	(select MIN(DEP_ID) from employees ) 
+);
 ```
 
 The sub-select doesn't just have to go in the where clause, it can also go in other parts of the query such as in the list of columns to be selected:
 
 ```sql
 select EMP_ID, SALARY,
-  ( select AVG(SALARY) from employees ) 
-  AS AVG_SALARY
-  from employees ;
+	(select AVG(SALARY) from employees) 
+	AS AVG_SALARY
+	from employees ;
 ```
 
 Another option is to make the sub-query be part of the `FROM` clause:
 
 ```sql
 select * from 
- ( select EMP_ID, F_NAME, L_NAME, DEP_ID 
- from employees) ;
+	(select EMP_ID, F_NAME, L_NAME, DEP_ID from employees);
 ```
 
 ### READING: Working with Multiple Tables
@@ -546,7 +549,7 @@ E1004  | San  	| Kumar  | 123 | 1972-07-31 | M   | 1 av... | 500    | 65000  | 3
 
 ```sql
 SELECT F_NAME FROM EMPLOYEES 
-	WHERE SALARY = ( SELECT MAX(SALARY) FROM EMPLOYEES )
+	WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES)
 ```
 
 
@@ -561,7 +564,7 @@ DEPT_ID_DEP | DEP_NAME | MANAGER_ID | LOC_ID
 
 ```sql
 SELECT * FROM EMPLOYEES 
-	WHERE DEP_ID = ( SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS )
+	WHERE DEP_ID = (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS)
 ```
 
 
@@ -569,26 +572,24 @@ If we want to retrieve only the employee records that correspond to departments 
 
 ```sql
 select * from employees 
-  where DEP_ID IN
-  ( select DEPT_ID_DEP from departments );
+	where DEP_ID IN
+		(select DEPT_ID_DEP from departments);
 ```
 
 Let's say we want to retrieve only the list of employees from a specific location. We do not have any location information in the EMPLOYEES table but the DEPARTMENTS table has a column called LOC_ID. So we can use a sub-query from the DEPARTMENTS table as input to the EMPLOYEE table query:
 
 ```sql
 select * from employees 
-  where DEP_ID IN
-   ( select DEPT_ID_DEP from departments 
-     where LOC_ID = 'L0002' );
+	where DEP_ID IN
+		(select DEPT_ID_DEP from departments where LOC_ID = 'L0002');
 ```
 
 Now let's retrieve the department ID and name for Empolyees who earn more than 70000:
 
 ```sql
 select DEPT_ID_DEP, DEP_NAME from departments
- where DEPT_ID_DEP IN
-  ( select DEP_ID from employees 
-    where SALARY > 70000 ) ;
+	where DEPT_ID_DEP IN
+		(select DEP_ID from employees where SALARY > 70000) ;
 ```
 
 2. Implicit join
@@ -603,30 +604,30 @@ We can use additional operands to limit the result set. In the following example
 
 ```sql
 select * from employees, departments 
-  where employees.DEP_ID = departments.DEPT_ID_DEP;
+  	where employees.DEP_ID = departments.DEPT_ID_DEP;
 ```
 
 Notice that in the where clause we pre-fixed the name of the column with the name of the table to fully qualify the column name since it's possible that the different tables could have the some column names that are exactly the same. Since the table names can be sometimes long, we can use shorther aliases for table names as follows:
 
 ```sql
 select * from employees E, departments D 
-  where E.DEP_ID = D.DEPT_ID_DEP;
+  	where E.DEP_ID = D.DEPT_ID_DEP;
 ```
 
 Similarly, the column names in the select clause can be pre-fixed by aliases:
 
 ```sql
 select E.EMP_ID, D.DEPT_ID_DEP  
-  from employees E, departments D 
-  where E.DEP_ID = D.DEPT_ID_DEP;
+	from employees E, departments D 
+	where E.DEP_ID = D.DEPT_ID_DEP;
 ```
 
 Let's say we want to see the department name for each employee:
 
 ```sql
 select E.EMP_ID, D.DEP_NAME from 
-  employees E, departments D
-  where E.DEP_ID = D.DEPT_ID_DEP
+	employees E, departments D
+	where E.DEP_ID = D.DEPT_ID_DEP
 ```
 
 However, if two tables have different column names, we don't need to use prefixes of tables. For example:
@@ -654,7 +655,7 @@ We can explicitly use the `JOIN` operator to `JOIN` multiple tables in a single 
 
 
 
-### Video 1: How to access DBs using Python?
+### How to access DBs using Python?
 
 **Advantages of using Python to access DB:**
 * Rich ecosystem: NumPy, pandas, matplotlib, SciPy
@@ -690,7 +691,7 @@ MongoDB						| PyMongo
 
 
 
-### Video 2: Writing code using DB-API
+### Writing code using DB-API
 
 
 Jupyter notebook <------ DB API calls ------> DBMS
@@ -723,8 +724,6 @@ These objects represent a database cursor which is used to manage the content of
 * A database cursor is a control structure that enables traversal over the records in a database
 * It behaves like a file name or file handle in a programming language. 
 
-<!-- ![c5_fig_cursor_interface_db](https://github.com/luuquangtrung/ibm_data_science/blob/master/images/c5_fig_cursor_interface_db.png)  -->
-
 
 * Just as a program opens a filed accesses files contents, it opens a cursor to gain access to the query results
 * Similarly, the program closes a file to end its access and closes a cursor to end access to the query results
@@ -746,8 +745,6 @@ Results = Cursor.fetchall()
 # Free resources
 Cursor.close()
 Connection.close()
-
-
 ```
 
 Summary: 
@@ -755,7 +752,7 @@ Summary:
 * A database cursor is like a file handle in that it enables you to scan through a result set of a query
 
 
-### Video 3: Connecting to a DB using `ibm_db` API
+### Connecting to a DB using `ibm_db` API
 
 * The `ibm_db` API provides a variety of useful Python functions for accessing and manipulating data in an IBM data server database, including functions for
 	* connecting to a database
@@ -827,7 +824,7 @@ In the above example:
 ### Lab 1: Connecting to a DB instance
 
 
-### Video 4: Creating tables, inserting and querying data
+### Creating tables, inserting and querying data
 
 * To create a table, we use the `ibm_db.exec_immediate()` function, with following parameters:
 	* Connection: A valid database connection resource that is returned from the ibm_dbconnect or ibm_dbpconnect function
@@ -902,7 +899,7 @@ df
 ### Lab 2: Creating tables, inserting and querying data
 
 
-### Video 5: Analyzing data with Python
+### Analyzing data with Python
 
 Four steps involed in loading data into a table:
 * Source
@@ -919,13 +916,15 @@ ibm_db.fetch_both(stmt)
 '''
 Out: {0: '260', '1': '260'}
 '''
+
 # Using Pandas:
 import pandas as pd
 import ibm_db_dbi
 
 pconn = ibm_db_dbi.Connection(conn)
 df = pd.read_sql('SELECT count(*) FROM MCDONALS_NUTRITION', pconn)
-df.head() 	# View 5 first rows
+
+df.head() 						# View 5 first rows
 df.describe(include = 'all') 	# View summary of the table: count, unique, top, freq, mean, std, etc.
 ```
 
@@ -938,25 +937,22 @@ Analyse data: Which food item has maximum sodium content?
 
 ```python
 import matplotlib.pylot as plt
-# matplotlib inline # for notebook
 import seaborn as sns 
+%matplotlib inline
 
 # Categorical scatterplots
-
-plot = sns.swarmplot(x="Catergory", y="Sodium", data=df) # data df is a dataframe
+plot = sns.swarmplot(x="Catergory", y="Sodium", data=df) # dataframe
 plt.setp(plot.get_xticklabels(), rotation=70)
 plt.title('Sodium Content')
 plt.show()
 ```
-
-<!-- ![c5_fig_seaborn_scatterplot](https://github.com/luuquangtrung/ibm_data_science/blob/master/images/c5_fig_seaborn_scatterplot.png) -->
-
 
 Get the maximum sodium content
 
 ```python
 # Code 1:
 df['Sodium'].describe()
+
 ''' 
 Output:
 count 	260.0000
@@ -980,16 +976,12 @@ Further data exploration using visualizations
 
 ```python
 import matplotlib.pylot as plt
-# matplotlib inline # for notebook
 import seaborn as sns 
 
 plot = sns.jointplot(x="Protein", y="Total Fat", data=df)
 plot.show()
 
 ```
-
-<!-- ![c5_fig_histogram_protein](https://github.com/luuquangtrung/ibm_data_science/blob/master/images/c5_fig_histogram_protein.png) -->
-
 
 **Comments:**
 * We see that the points on the scatter plot are closer to a straight line in the positive direction
@@ -1005,7 +997,6 @@ plot.show()
 
 ```python
 import matplotlib.pylot as plt
-# matplotlib inline # for notebook
 import seaborn as sns 
 
 plot = sns.set_style("whitegrid")
@@ -1014,16 +1005,11 @@ plot.show()
 
 ```
 
-<!-- ![c5_fig_boxplot](https://github.com/luuquangtrung/ibm_data_science/blob/master/images/c5_fig_boxplot.png) -->
-
-
 **Comments:**
 * Average values of sugar and food items around 30 grams
 * We also notice a few outliers that indicate food items with extreme values of sugar
 * There exists food items in the data set that have sugar content of around 128 grams
 * Candies maybe among these high sugar content food items on the menu
-
-
 
 
 ### Lab 3: Analyzing a real world data set
@@ -1135,9 +1121,6 @@ select distinct(name), coltype, length from sysibm.syscolumns where tbname = 'IN
 FYI, In MySQL you can run `"SHOW COLUMNS FROM TABNAME"`.
 
 
-
-
-
 ### QUIZ: Database access from Python
 
 1. Question 1
@@ -1146,7 +1129,6 @@ A database cursor is a control structure that enables traversal over the records
 2. Question 2
 The ibm_db API provides a variety of useful Python functions for accessing and manipulating data in an IBM data server like Db2. Is this statement True or False?
 True
-
 
 * The `ibm_db` API provides a variety of useful Python functions for accessing and manipulating data in an IBM data server database, including functions for
 	* connecting to a database
@@ -1169,14 +1151,12 @@ Due to its proprietary nature, database access from Python is not available for 
 There are libraries and APIs available to access many of the popular databases from Python.
 Python is a popular scripting language for connecting and accessing databases.
 
-
 5. Question 5
 To query data from tables in database a connection to the database needs to be established. Which of the following is NOT required to establish a connection with a relational database from a Python notebook:
 
 An SQL or Database API
 Username, Password, and Database name
 Table and Column names <- THIS
-
 
 
 ## WEEK 4: Course Assignment
