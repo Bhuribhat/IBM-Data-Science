@@ -80,8 +80,8 @@ create table TABLENAME (
     COLUMN1 datatype,
     COLUMN2 datatype,
     COLUMN3, datatype,
-        ...
-    );
+    ...
+);
 ```
 
 ```sql
@@ -95,7 +95,7 @@ create table COUNTRY (
     ID integer PRIMARY KEY NOT NULL,	-- It cannot contain a NULL or empty value
     CCODE char(2),			-- Country code of type char (2 letters)
     NAME varchar(60)			-- A variable length country name column
-    );
+);
 ```
 
 ### `SELECT` Statement
@@ -238,7 +238,7 @@ delete from [tablename] <where [condition]>
 -- Example:
 update book_table 
 	set title = "Harry Potter and the Philosopher's Stone"
-		author = "J. K. Rowling"
+	    author = "J. K. Rowling"
 	where book_id = B3
 
 
@@ -280,12 +280,12 @@ db2 => select title, pages from book_table where pages >= 290 AND pages <= 300
 db2 => select title, pages from book_table where pages between 290 and 300
 
 -- EXAMPLE 3:
-db2 => select firstname, lastname, country from author where 
-		country='AU' OR country='BR'
+db2 => select firstname, lastname, country from author 
+	where country='AU' OR country='BR'
 
 -- Use this instead:
-db2 => select firstname, lastname, country from author where 
-		country IN ('AU','BR')
+db2 => select firstname, lastname, country from author 
+	where country IN ('AU','BR')
 ```
 
 
@@ -488,7 +488,7 @@ SQL0120N   Invalid use of an aggregate function or OLAP function.SQLCODE=-120, S
 
 ```sql
 select EMP_ID, F_NAME, L_NAME, SALARY from employees 
-	where SALARY < (select AVG(SALARY) from employees);
+where SALARY < (select AVG(SALARY) from employees);
 ```
 
 **Example**: Table `employees`:
@@ -546,12 +546,10 @@ E1007  | Mary 	| Thomas | 123 | 1972-07-31 | F   |	1 av... | 400    | 65000  | 3
 E1004  | San  	| Kumar  | 123 | 1972-07-31 | M   | 1 av... | 500    | 65000  | 30002 	   | 7
 
 
-
 ```sql
 SELECT F_NAME FROM EMPLOYEES 
-	WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES);
+WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES);
 ```
-
 
 **Example**: Table `DEPARTMENTS`:
 
@@ -561,35 +559,33 @@ DEPT_ID_DEP | DEP_NAME | MANAGER_ID | LOC_ID
 7			| Design   | 30003		| L0003
 
 
-
 ```sql
 SELECT * FROM EMPLOYEES 
-	WHERE DEP_ID = (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS);
+WHERE DEP_ID = (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS);
 ```
-
 
 If we want to retrieve only the employee records that correspond to departments in the DEPARTMENTS table, we can use:
 
 ```sql
 select * from employees 
-	where DEP_ID IN
-		(select DEPT_ID_DEP from departments);
+where DEP_ID IN
+	(select DEPT_ID_DEP from departments);
 ```
 
 Let's say we want to retrieve only the list of employees from a specific location. We do not have any location information in the EMPLOYEES table but the DEPARTMENTS table has a column called LOC_ID. So we can use a sub-query from the DEPARTMENTS table as input to the EMPLOYEE table query:
 
 ```sql
 select * from employees 
-	where DEP_ID IN
-		(select DEPT_ID_DEP from departments where LOC_ID = 'L0002');
+where DEP_ID IN
+	(select DEPT_ID_DEP from departments where LOC_ID = 'L0002');
 ```
 
 Now let's retrieve the department ID and name for Empolyees who earn more than 70000:
 
 ```sql
 select DEPT_ID_DEP, DEP_NAME from departments
-	where DEPT_ID_DEP IN
-		(select DEP_ID from employees where SALARY > 70000);
+where DEPT_ID_DEP IN
+	(select DEP_ID from employees where SALARY > 70000);
 ```
 
 2. Implicit join
@@ -604,30 +600,30 @@ We can use additional operands to limit the result set. In the following example
 
 ```sql
 select * from employees, departments 
-  	where employees.DEP_ID = departments.DEPT_ID_DEP;
+where employees.DEP_ID = departments.DEPT_ID_DEP;
 ```
 
 Notice that in the where clause we pre-fixed the name of the column with the name of the table to fully qualify the column name since it's possible that the different tables could have the some column names that are exactly the same. Since the table names can be sometimes long, we can use shorther aliases for table names as follows:
 
 ```sql
 select * from employees E, departments D 
-  	where E.DEP_ID = D.DEPT_ID_DEP;
+where E.DEP_ID = D.DEPT_ID_DEP;
 ```
 
 Similarly, the column names in the select clause can be pre-fixed by aliases:
 
 ```sql
 select E.EMP_ID, D.DEPT_ID_DEP  
-	from employees E, departments D 
-	where E.DEP_ID = D.DEPT_ID_DEP;
+from employees E, departments D 
+where E.DEP_ID = D.DEPT_ID_DEP;
 ```
 
 Let's say we want to see the department name for each employee:
 
 ```sql
-select E.EMP_ID, D.DEP_NAME from 
-	employees E, departments D
-	where E.DEP_ID = D.DEPT_ID_DEP;
+select E.EMP_ID, D.DEP_NAME  
+from employees E, departments D
+where E.DEP_ID = D.DEPT_ID_DEP;
 ```
 
 However, if two tables have different column names, we don't need to use prefixes of tables. For example:
@@ -635,8 +631,8 @@ However, if two tables have different column names, we don't need to use prefixe
 ```sql
 -- Full command using table prefixes:
 SELECT E.F_NAME, D.DEP_NAME 
-	FROM EMPLOYEES E, DEPARTMENTS D 
-	WHERE E.DEP_ID = D.DEPT_ID_DEP;
+FROM EMPLOYEES E, DEPARTMENTS D 
+WHERE E.DEP_ID = D.DEPT_ID_DEP;
 
 -- Short command, given that two tables have different column names:
 SELECT F_NAME, DEP_NAME 
@@ -686,7 +682,6 @@ DB access for MS Windows 	| ODBC
 Oracle 						| OCI
 Java 						| JDBC
 MongoDB						| PyMongo
-
 
 
 ### Writing code using DB-API
@@ -837,7 +832,9 @@ stmt  = ibm_db.exec_immediate(conn,
 		model VARCHAR(20) NOT NULL,
 		manufacturer VARCHAR(20) NOT NULL,
 		Engine_size VARCHAR(20) NOT NULL,
-		Truck_Class VARCHAR(20) NOT NULL);")
+		Truck_Class VARCHAR(20) NOT NULL
+	);"
+)
 
 # Python code to insert data into the table
 stmt  = ibm_db.exec_immediate(conn,
@@ -999,7 +996,6 @@ import seaborn as sns
 plot = sns.set_style("whitegrid")
 ax = sns.boxplot(x = df["Sugars"])
 plot.show()
-
 ```
 
 **Comments:**
