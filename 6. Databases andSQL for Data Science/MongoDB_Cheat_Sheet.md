@@ -50,7 +50,7 @@ db
 ## Show All Databases
 
 ```js
-show dbs
+show databases OR show dbs
 ```
 
 ## Create Or Switch Database
@@ -94,17 +94,19 @@ db.posts.insert({
     tags: ['news', 'events'],
     date: Date()
 })
+```
 
-or
+OR
 
-db.posts.insertOne({
-    title: 'Post 1',
-    body: 'Body of post.',
-    category: 'News',
-    likes: 1,
-    tags: ['news', 'events'],
-    date: Date()
-})
+```js
+// variable (js syntax) and pass as parameter
+var user = {
+  name: "Mohammad MohammadAlian",
+  ip: "127.0.0.1",
+  lastLoginTime: 1575704736
+};
+
+db.posts.insertOne(user);
 ```
 
 ## Insert Multiple Documents
