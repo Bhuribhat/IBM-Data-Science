@@ -1158,3 +1158,74 @@ Table and Column names <- THIS
 * Go to your IBM Cloud dashboard: https://console.bluemix.net/dashboard/apps
 * Then click on the Db2 service and click on Open Console button. Once Db2 console opens you can select LOAD from the menu.
 * For detailed instructions to launch Db2 console refer to Week 1: Hands on Lab: Composing and Running basic SQL queries
+
+
+### Advance SQL Interview Question
+
+**Rank Variance Per Country**
+
+Which countries have risen in the rankings based on the number of comments between Dec 2019 vs Jan 2020?  
+__Hint__: Avoid gaps between ranks when ranking countries.
+
+[reference](https://platform.stratascratch.com/coding/2007-rank-variance-per-country?utm_source=youtube&utm_medium=click&utm_campaign=YT+description+link&code_type=1)
+[tutorial](https://www.youtube.com/watch?v=PlpUo6bHsBQ)
+
+> Tables: fb_comments_count, fb_active_users
+
+- fb_comments_count
+
+```
+user_id:				int
+created_at:				datetime
+number_of_comments:		int
+```
+
+- fb_active_users
+
+```
+user_id:				int
+name:					varchar
+status:					varchar
+country:				varchar
+```
+
+```sql
+-- Join 2 tables on user_id (Left join because not all user may have made comments)
+-- Filter our table for Dec 2019 and Jan 2020
+-- Exclude rows where country is empty
+-- Sum the number of comments per country
+-- Use a Left join to compare Dec 19 and Jan 20 comments
+-- Rank 2019 comment counts and 2020 comment counts
+-- Apply final filter to fetch only countries with ranking (Jan rank < Dec rank)
+
+with dec_summary as (
+	SELECT 
+		country,
+		sum(number_of_comments) as number_of_comments_dec,
+		dense_rank() over(order by sum(number_of_comments) DESC) as country_rank 
+	FROM fb_active_users as a
+	LEFT JOIN fb_comments_count as b
+		on a.user_id = b.user_id
+	WHERE created_at <= '2019-12-31' and created_at >= '2019-12-01'
+		AND country IS NOT NULL
+	GROUP BY country
+),
+
+jan_summary as (
+	SELECT 
+		country,
+		sum(number_of_comments) as number_of_comments_jan,
+		dense_rank() over(order by sum(number_of_comments) DESC) as country_rank 
+	FROM fb_active_users as a
+	LEFT JOIN fb_comments_count as b
+		on a.user_id = b.user_id
+	WHERE created_at <= '2020-12-31' and created_at >= '2020-12-01'
+		AND country IS NOT NULL
+	GROUP BY country
+)
+
+SELECT j.country
+FROM jan_summary j
+LEFT JOIN dec_summary d on d.country = j.country
+WHERE j.country_rank < d.country_rank OR d.country IS NULL
+```

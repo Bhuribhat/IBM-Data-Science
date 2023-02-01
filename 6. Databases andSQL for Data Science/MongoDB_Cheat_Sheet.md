@@ -71,6 +71,12 @@ db.dropDatabase()
 db.createCollection('posts')
 ```
 
+## Delete Collection
+
+```js
+db.posts.drop()
+```
+
 ## Show Collections
 
 ```js
@@ -80,6 +86,17 @@ show collections
 ## Insert Document
 
 ```js
+db.posts.insert({
+    title: 'Post 1',
+    body: 'Body of post.',
+    category: 'News',
+    likes: 1,
+    tags: ['news', 'events'],
+    date: Date()
+})
+
+or
+
 db.posts.insertOne({
     title: 'Post 1',
     body: 'Body of post.',
@@ -132,7 +149,7 @@ db.posts.insertMany([
 ## Find All Documents
 
 ```js
-db.posts.find()
+db.posts.find().pretty()
 ```
 
 ## Find Documents with Query
