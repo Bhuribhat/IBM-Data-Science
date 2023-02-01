@@ -1177,7 +1177,7 @@ __Hint__: Avoid gaps between ranks when ranking countries.
 ```
 user_id:				int
 created_at:				datetime
-number_of_comments:		int
+number_of_comments:			int
 ```
 
 - fb_active_users
