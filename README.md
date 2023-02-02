@@ -52,6 +52,8 @@ The following Python libraries were used throughout the certification: <br>
 - [Loan Prediction with Machine Learning](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%205%20-%20Final%20Project/Loan_Prediction.ipynb)
 - [Rain Prediction with Machine Learning](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%205%20-%20Final%20Project/Rain_Prediction.ipynb)
 - [Breast Cancer Prediction with Machine Learning](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%205%20-%20Final%20Project/Breast%20Cancer)
+- [Mushroom Classification with Machine Learning](https://github.com/Bhuribhat/IBM-Data-Science/tree/main/9.%20Machine%20Learning/Week%205%20-%20Final%20Project/Mushroom_Classification.ipynb)
+
 
 
 <!-- ## 🏆 Certificates 
