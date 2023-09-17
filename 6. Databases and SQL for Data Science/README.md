@@ -1236,10 +1236,121 @@ WHERE j.country_rank < d.country_rank OR d.country IS NULL
 
 - 2NF: Each non-key attribute must be dependent on the entire primary key (No Partial Dependency)
 
-- 3NF: Dependency of non-key attribute on other non-key attribute is not permitted 
+- 3NF: Dependency of non-key attribute on other non-key attribute is not permitted (No Transitive Dependency)
 
 - Boyce-Codd: Every attribute in a table should depend on the key, the whole key, and nothing but the key
 
 - 4NF: Multivalued dependencies in a table must be multivalued dependencies on the key
 
 - 5NF: Whether the table (which must be in 4NF) can be logically thought of as being the result of joining some other tables together
+
+
+### Example
+
+#### `Unnormalize:`
+
+| student_id | course_id | student_name | course_name | grade | teacher | teacher_email |
+| --- | --- | --- | --- | --- | --- | --- |
+| 100 | 10 | John | SQL | A | Roger | Roger@teacher.edu |
+| 200 | 10 | Jane | SQL | B | Roger | Roger@teacher.edu |
+| 100 | 20 | John | Python | A | Rafa | Rafa@teacher.edu |
+| 200 | 20 | Jane | Python | A | Rafa | Rafa@teacher.edu |
+| 300 | 10 | Ron | SQL | C | Roger | Roger@teacher.edu |
+| 400 | 10 | Paul | SQL | C | Roger | Roger@teacher.edu |
+| 400 | 20 | Paul | Python | C | Rafa | Rafa@teacher.edu |
+
+#### `1NF:`
+
+- Have a Primary Key
+- No Duplicate
+- No Multivalued Attribute
+
+| student_id | course_id | student_name | course_name | grade | teacher | teacher_email |
+| --- | --- | --- | --- | --- | --- | --- |
+| 100 | 10 | John | SQL | A | Roger | Roger@teacher.edu |
+| 200 | 10 | Jane | SQL | B | Roger | Roger@teacher.edu |
+| 100 | 20 | John | Python | A | Rafa | Rafa@teacher.edu |
+| 200 | 20 | Jane | Python | A | Rafa | Rafa@teacher.edu |
+| 300 | 10 | Ron | SQL | C | Roger | Roger@teacher.edu |
+| 400 | 10 | Paul | SQL | C | Roger | Roger@teacher.edu |
+| 400 | 20 | Paul | Python | C | Rafa | Rafa@teacher.edu |
+
+> PK = { student_id, course_id }
+
+#### `2NF:`
+
+- No Partial Dependency (A -> B mean B depend on A)
+- { student_id } -> { student_name }
+- { course_id } -> { course_name, teacher }
+
+So, this violates 2NF  
+
+| student_id | student_name |
+| --- | ---  |
+| 100 | John |
+| 200 | Jane |
+| 300 | Ron  | 
+| 400 | Paul |
+
+> PK = { student_id }
+
+| course_id | course_name | teacher | teacher_email |
+| --- | --- | --- | --- |
+| 10  | sql | Roger | Roger@teacher.edu |
+| 20  | Python | Rafa | Rafa@teacher.edu |
+
+> PK = { course_id }
+
+| student_id | course_id | grade |
+| --- | --- | --- |
+| 100 | 10 | A |
+| 200 | 10 | B |
+| 100 | 20 | A |
+| 200 | 20 | A |
+| 300 | 10 | C |
+| 400 | 10 | C |
+| 400 | 20 | C |
+
+> PK = { student_id, course_id }
+
+#### `3NF:`
+
+- No Transitive Dependency
+- Non-prime key { teacher } -> { teacher_email }
+
+So, this violates 3NF  
+
+| student_id | student_name |
+| --- | ---  |
+| 100 | John |
+| 200 | Jane |
+| 300 | Ron  | 
+| 400 | Paul |
+
+> PK = { student_id }
+
+| course_id | course_name | teacher_id |
+| --- | --- | --- |
+| 10  | sql | 1 |
+| 20  | Python | 2 |
+
+> PK = { course_id }
+
+| teacher_id | teacher | teacher_email |
+| --- | --- | --- |
+| 1   | Roger | Roger@teacher.edu |
+| 2   | Rafa  | Rafa@teacher.edu |
+
+> PK = { teacher_id }
+
+| student_id | course_id | grade |
+| --- | --- | --- |
+| 100 | 10 | A |
+| 200 | 10 | B |
+| 100 | 20 | A |
+| 200 | 20 | A |
+| 300 | 10 | C |
+| 400 | 10 | C |
+| 400 | 20 | C |
+
+> PK = { student_id, course_id }
