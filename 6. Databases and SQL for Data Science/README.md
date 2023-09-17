@@ -1229,3 +1229,17 @@ FROM jan_summary j
 LEFT JOIN dec_summary d on d.country = j.country
 WHERE j.country_rank < d.country_rank OR d.country IS NULL
 ```
+
+## Database Normalization
+
+- 1NF: Add primary key, No Multivalued Attribute (create quantity column instead)
+
+- 2NF: Each non-key attribute must be dependent on the entire primary key (No Partial Dependency)
+
+- 3NF: Dependency of non-key attribute on other non-key attribute is not permitted 
+
+- Boyce-Codd: Every attribute in a table should depend on the key, the whole key, and nothing but the key
+
+- 4NF: Multivalued dependencies in a table must be multivalued dependencies on the key
+
+- 5NF: Whether the table (which must be in 4NF) can be logically thought of as being the result of joining some other tables together
