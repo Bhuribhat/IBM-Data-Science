@@ -1354,3 +1354,10 @@ So, this violates 3NF
 | 400 | 20 | C |
 
 > PK = { student_id, course_id }
+
+# 🏆 Certificates 
+To verify the certificates, click the images to follow the links.
+
+<!-- TODO: honor -->
+<p align="middle">
+  <a href="https://coursera.org/share/47c6c466a1860a87657200ada9d19b02"><img src="./Images/Certificate.png" height="400"></a>
